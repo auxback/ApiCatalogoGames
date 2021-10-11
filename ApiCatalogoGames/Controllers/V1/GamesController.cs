@@ -13,13 +13,19 @@ namespace ApiCatalogoGames.Controllers.V1
     public class GamesController : ControllerBase
     {
         [HttpGet]
-        public async Task<ActionResult<List<object>>> Obter(object game)
+        public async Task<ActionResult<List<object>>> Obter()
+        {
+            return Ok();
+        }
+
+        [HttpGet("{idGame:guid}")]
+        public async Task<ActionResult<object>> Obter(Guid idGame)
         {
             return Ok();
         }
 
         [HttpPost]
-        public async Task<ActionResult<object>> InserirGame(Guid idGame, object game)
+        public async Task<ActionResult<object>> InserirGame(object game)
         {
             return Ok();
         }
@@ -33,7 +39,7 @@ namespace ApiCatalogoGames.Controllers.V1
 
         [HttpPatch("{idGame:guid}/preco/{preco:double}")]
         //Patch só sobrescreve
-        public async Task<ActionResult> AtualizarPreco(Guid idGame, object preco)
+        public async Task<ActionResult> AtualizarGame(Guid idGame, double preco)
         {
             return Ok();
         }
